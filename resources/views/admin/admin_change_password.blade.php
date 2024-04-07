@@ -41,29 +41,29 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">ADMIN CHANGE PASSWORD</h4>
-            <form class="forms-sample" method="POST" action="{{route('admin.profile.store')}}" enctype="multipart/form-data">
+            <form class="forms-sample" method="POST" action="{{route('admin.update.password')}}" enctype="multipart/form-data">
                 @csrf
 
               <div class="form-group">
-                <label for="exampleInputName1">Old Password</label>
-                <input type="text" name="old_password" class="form-control @error('old_password') is-invalid @enderror" id="old_password">
+                <label for="exampleInputName1" class="form-label">Old Password</label>
+                <input type="password" name="old_password" class="  form-control @error('old_password') is-invalid @enderror" id="old_password" autocomplete="off">
                 @error('old_password')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
 
               <div class="form-group">
-                <label for="exampleInputName1">New Password</label>
-                <input type="text" name="new_password" class="form-control  @error('new_password') is-invalid @enderror" id="new_password">
+                <label for="exampleInputName2"  class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control  @error('new_password') is-invalid @enderror" id="new_password" autocomplete="off">
                 @error('new_password')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
 
               <div class="form-group">
-                <label for="exampleInputName1">Confirm New Password</label>
-                <input type="text" name="confirm_new_password" class="form-control  @error('new_confirm_password') is-invalid @enderror" id="confirm_new_password">
-                @error('confirm_new_password')
+                <label for="exampleInputName3"  class="form-label">Confirm New Password</label>
+                <input type="password" name="new_password_confirmation" class="form-control  @error('confirm_new_password') is-invalid @enderror" id="new_password_confirmation" autocomplete="off">
+                @error('new_password_confirmation')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
               </div>
